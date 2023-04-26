@@ -1,0 +1,72 @@
+﻿<Window x:Class="StroiMater.View.ListofProducts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StroiMater.View"
+        mc:Ignorable="d"
+        MinHeight="200"
+        WindowStartupLocation="CenterScreen"
+        MinWidth="200"
+        Title="Список товаров" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button
+                Name="btnAdd"
+                
+                Margin="10"
+                Width="120"
+                Content="Добавить" />
+            <Button
+                Name="btnEdit"
+                
+                Margin="10"
+                Width="120"
+                Content="Редактировать" />
+            <Button
+                Margin="10"
+                Width="120"
+                Content="Удалить"
+                 />
+        </StackPanel>
+
+        <DataGrid
+            SelectedItem="{Binding SelectedUser}"
+            Grid.Row="1"
+            IsReadOnly="True"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding Users}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Имя товара"
+                    Width="100"
+                    Binding="{Binding UserInfo.LastName}"/>
+                <DataGridTextColumn
+                    Header="Артикул"
+                    Width="100"
+                    Binding="{Binding UserInfo.LastName}"/>
+                <DataGridTextColumn
+                    Header="Категория"
+                    Width="100"
+                    Binding="{Binding UserInfo.FirstName}" />
+                <DataGridTextColumn
+                    Header="Кол-во на складе"
+                    Width="110"
+                    Binding="{Binding UserInfo.MiddleName}" />
+                <DataGridTextColumn
+                    Header="Поставщик"
+                    Width="100"
+                    Binding="{Binding UserInfo.MiddleName}" />
+                <DataGridTextColumn
+                    Header="Стоимость за 1шт"
+                    Width="110"
+                    Binding="{Binding UserInfo.MiddleName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
